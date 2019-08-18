@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardList from "./components/Card-list/CardList";
+import SearchBox from "./components/SearchBox/SearchBox";
 import "./App.scss";
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
   )
   return (
     <div className="container mt-5 App">
-      <input type="search" placeholder="search monsters..." className="mb-5 form-control col-sm-6 mx-auto" onChange={e => setSearchField(e.target.value) } />
+      <SearchBox setSearchField={setSearchField} />
       <CardList users={filteredUsers} />
     </div>
   );
